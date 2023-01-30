@@ -1,0 +1,41 @@
+body{
+    font-family : 'Roboto', sans-serif;
+    background-color : lightblue;
+}
+.navbar{
+    background-color: #A3C4DA;
+}
+table {
+    border:5px solid black;
+    padding:30px;
+    background-color:lightgray;
+    max-width:1500px;
+}
+.reglink{
+
+    padding-left :0px;
+    padding-bottom : 20px;
+    padding-right : 50px;
+    padding-top : 50px;
+}
+.register{
+    padding-left:250px;
+    padding-top : 50px;
+}
+.login{
+    padding-left:550px;
+    padding-top : 50px;
+}
+.textTable{
+    padding-top : 50px;
+    padding-left: 50px;
+}
+.data{
+    text-align:center;
+    padding-top : 50px;
+    padding-left: 50px;
+    margin-bottom:20px;
+}
+.h4{
+    padding-left: 50px;
+}

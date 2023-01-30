@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="text-center">
+<table>
+    <tr><td colspan="2"><h1>Application Form</h1></br></td></tr>
+    <form method="post" action="" >
+		{% csrf_token %}
+        <tr>
+            <td><label for="name" >Name</label></td>
+            <td><input type="text" name="name" placeholder="Enter your name name"></td>
+        </tr>
+		<tr>
+          <td><label for="dob">Enter your date of birth</label></td>
+		  <td><input type="date" name="dob" placeholder=""></td>
+		</tr>
+		<tr>
+			<td><label for="age">Enter your age</label></td>
+			<td><input type="number" name="age" ></td>
+		</tr>
+
+        <tr>
+        <td><label for="mailid">Enter the your mailid</td>
+        <td><input type="email" name="mailid"></td>
+        </tr>
+        <tr>
+        <td><label for="pnum">Enter your phone number</label></td>
+        <td><input type="text" name="phoneNo" placeholder="Enter your phone number"></td>
+        </tr>
+        <tr>
+        <td><label>Gender</label></td>
+        <td><input type="radio" name="gender" value="Male">
+        <label>Male</label></br>
+        <input type="radio" name="gender" >
+        <label>Female</label></td>
+        </tr>
+        <tr>
+        <td><label>Enter your Address</label></td>
+        <td><input type="text" name="address" placeholder="Enter your Address"></td>
+        </tr>
+
+
+        <tr>
+        <td><label>District</label></td>
+        <td>
+		    <select class="custom-select" name="district"
+    hx-get="{% url 'bankapp:branches' %}"
+    hx-trigger="change"
+    hx-target="#branches">
+        <option selected>Select the District</option>
+        {% for item in districts  %}
+            <option value="{{ item.pk }}">{{ item.dname }}</option>
+        {% endfor %}
+    </select>
+	</td>
+    </tr>
+    <tr>
+        <td><label> Select your Branch</label></td>
+	<td>
+    <div id="branches">
+        {% include 'partials/branches.html' %}
+    </div>
+		</td>
+        </tr>
+
+        <tr>
+		<td><label>Account Type</label></td>
+		<td>
+			  <select name="account" id="account">Account Type
+    <option value="x">Savings Account</option>
+    <option value="y">Current Account</option>
+    <option value="z">Salary Account</option>
+    </select>
+		</td>
+		<tr>
+
+	  <tr>
+	  <td rowspan="5">
+		<label>Materials Required</label>
+	  </td>
+        </tr>
+
+	   <tr><td><input type="checkbox" name="materials" value="Bike">
+  <label for="materials">cheque</label></td></tr>
+  <tr><td><input type="checkbox" name="materials2" value="Car">
+  <label for="materials2"> credit card</label></td></tr>
+  <tr><td><input type="checkbox" name="materials3" value="Car">
+  <label for="materials3"> net banking</label></td></tr>
+  <tr><td><input type="checkbox" name="materials4" value="Boat" checked>
+  <label for="materials4"> debit card</label></td>
+	  </tr>
+
+        <tr>
+        <td colspan="2" style="text-align:center"><input type="submit" name="Submit&Logout"></td>
+        </tr>
+
+    </form>
+    </table>
+</div>
+</div>
+
+
+{% endblock %}

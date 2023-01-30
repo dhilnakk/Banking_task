@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+ <img src="{% static 'images/banner-bg.png' %}" alt="logimage" width="1450px" height="500">
+
+    <div class="row mx-auto">
+        <div class="data col-12 col-sm-12 col-md-12 col-lg-6 text-center">
+            <h3>KTB Bank</h3>
+    Banking consists of many activities that can be done through a number of financial institutions that accept deposits from individuals and other entities, and then use this money to offer loans and to invest and earn profit.
+
+Banks can be placed into certain categories based on the type of business they conduct. Commercial banks provide services to private individuals and businesses. Retail banking provides credit, deposit, and money management to individuals and families.
+</div>
+
+<div class="data col-12 col-sm-12 col-md-12 col-lg-6 text-center">
+    You can login to your account from here.</br>
+    <button type="button"><a href="{% url 'bankapp:login' %}">Login</a></button>
+</div>
+        </div>
+{% endblock %}

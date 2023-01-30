@@ -1,0 +1,7 @@
+  <select class="custom-select" name="district" >
+        <option selected>Select the Branch</option>
+        {% for item in branches  %}
+            <option value="{{ item.pk }}">{{ item.bname }}</option>
+
+        {% endfor %}
+    </select></br></br>
